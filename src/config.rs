@@ -345,6 +345,8 @@ make_config! {
         smtp_username:          String, true,   option;
         /// Password
         smtp_password:          Pass,   true,   option;
+        /// Accept invalid certificates
+        smtp_ssl_insecure:      bool,   true,   def,    false;
     },
 }
 

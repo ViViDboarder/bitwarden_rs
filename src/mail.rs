@@ -18,6 +18,7 @@ fn mailer() -> SmtpTransport {
     let client_security = if CONFIG.smtp_ssl() {
         let tls = TlsConnector::builder()
             .min_protocol_version(Some(Protocol::Tlsv11))
+            .danger_accept_invalid_certs(CONFIG.smtp_ssl_insecure())
             .build()
             .unwrap();
 
